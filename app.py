@@ -230,6 +230,6 @@ if st.button("Start Fine-Tuning") and uploaded_csv is not None:
             description="Fine-tuning on Hyundai IONIQ 5 Q&A data"
         )
         st.success("Successfully requested finetuning of llama-3-1-8b-instruct")
-        st.info("Your finetuning is completed!")
+        st.success("Your finetuning is completed!")
     except Exception as e:
         st.error(f"Error during fine-tuning: {e}")
