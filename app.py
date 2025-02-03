@@ -200,7 +200,7 @@ dataset_name = st.text_input("Dataset Name", value="Enter Your dataset name")
 uploaded_csv = st.file_uploader("Upload CSV for Fine-Tuning", type=["csv"], key="ft_csv")
 epochs = st.number_input("Epochs", min_value=1, max_value=100, value=5, step=1)
 Base_model_name = st.text_input("Base Model", value="llama-3-1-8b-instruct")
-adaptor_repo_name = st.text_input("Repository Name", value="Enter adaptor name")
+repo_name = st.text_input("Repository Name", value="Enter adaptor name")
 repo_desc = st.text_input("Repository Description", value="Enter repo description")
 
 # Fixed parameters: rank = 16, learning_rate = 0.0002, temperature = 0.5, top_p = 0.1
