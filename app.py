@@ -153,7 +153,7 @@ st.title("Predibase Fine-Tuning Pipeline")
 # --- Step 1: File Upload and Q&A Generation ---
 st.header("Step 1: Upload File and Generate CSV Dataset")
 uploaded_file = st.file_uploader("Upload a PDF, DOCX, or TXT file", type=["pdf", "docx", "txt"])
-num_questions = st.number_input("Number of Questions to Generate", min_value=1, max_value=30, value=5, step=1)
+num_questions = st.number_input("Number of Questions to Generate(MAX=50)", min_value=1, max_value=50, value=5, step=1)
 
 if uploaded_file is not None:
     file_extension = uploaded_file.name.split(".")[-1].lower()
