@@ -237,8 +237,8 @@ if st.button("Start Fine-Tuning") and uploaded_csv is not None:
 
         # Displaying the results
         st.success(f"Successfully requested fine-tuning of **{Base_model_name}**.")
-        st.info(f"**Adapter Name:** `{adapter_name}`")
-        st.info(f"**Adapter ID:** `{adapter_id}`")
+        st.success(f"**Adapter Name:** `{adapter_name}`")
+        st.success(f"**Adapter ID:** `{adapter_id}`")
         st.success("Your fine-tuning is completed!")
 
     except Exception as e:
