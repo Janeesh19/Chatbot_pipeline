@@ -48,7 +48,13 @@ def flatten_embedding(embedding_vector):
     return embedding_vector
 
 # Initialize Qdrant client (assumes Qdrant is running locally)
-qdrant_client = QdrantClient(host="127.0.0.1", port=6333)
+from qdrant_client import QdrantClient
+
+qdrant_client = QdrantClient(
+    url="https://9c8527a0-e8d7-4807-950a-a705b338b515.europe-west3-0.gcp.cloud.qdrant.io",
+    api_key=st.secrets["QDRANT_API_KEY"] 
+)
+
 qdrant_collection = "qna_collection"
 embedding_dimension = 256  # Adjust based on your model’s output dimension
 
