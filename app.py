@@ -48,7 +48,7 @@ def flatten_embedding(embedding_vector):
     return embedding_vector
 
 # Initialize Qdrant client (assumes Qdrant is running on localhost)
-qdrant_client = QdrantClient(host="localhost", port=6333)
+qdrant_client = QdrantClient(host="127.0.0.1", port=6333)
 qdrant_collection = "qna_collection"
 embedding_dimension = 256  # Adjust based on your model’s output dimension
 
@@ -64,7 +64,7 @@ wl = WordLlama.load()
 # ------------------------------
 # Configuration and Initialisation
 # ------------------------------
-pb = Predibase(api_token=st.secrets["general"]["OPENAI_API_KEY"])  # Use appropriate key if needed
+pb = Predibase(api_token=st.secrets["general"]["OPENAI_API_KEY"])
 GROQ_API_KEY = st.secrets["general"]["GROQ_API_KEY"]
 groq_client = Groq(api_key=GROQ_API_KEY)
 MODEL_NAME = "llama-3.1-8b-instant"
@@ -134,7 +134,7 @@ with st.expander("COT Prompt Optimization Settings"):
         optimized_prompt = solution.value
         st.session_state.optimized_cot_prompt = optimized_prompt
         st.write("Optimized COT Prompt has been set:")
-        st.markdown(optimized_prompt)  # Displays the full paragraph
+        st.markdown(optimized_prompt)  # Display as a full paragraph with preserved line breaks
 
 # ------------------------------
 # Helper Functions: File Extraction
